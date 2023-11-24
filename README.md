@@ -6,6 +6,8 @@ Any time someone sends me a Spotify URL instead of logging in with my credential
 
 **No logins, subscriptions, or API keys needed!**
 
+https://github.com/bbershadsky/spotify-youtube-mp3/assets/7572432/70f1d4bb-41c3-4b04-97d8-3dde584cbda6
+
 ### Installation
 
 Install the npm package to scrape spotify URLs
