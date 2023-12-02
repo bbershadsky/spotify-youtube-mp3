@@ -86,6 +86,30 @@ Deleting original file Sun & Moon (Above & Beyond Extended Club Mix) [BsrNZU8NdR
 
 `./batch.sh`
 
+## Scraping an entire Spotify Playlist
+
+Note: If the playlist is over 150 songs you would need to do several snapshots (scroll down halfway and/or all the way down during the browser preview) and combine the csv into one file. Don't worry about duplicates, yt-dlp by default won't re-download existing songs.
+
+### Installation
+
+```bash
+brew install chromedriver # or brew cask install chromedriver
+pip install -U selenium
+# Manual install
+# Download for your architecture https://sites.google.com/chromium.org/driver/downloads?authuser=0
+mv ~/Downloads/webdriver* /usr/local/bin/ # Move the webdriver into /usr/local/bin
+```
+
+### Batch spotify playlist workflow
+
+```bash
+python scraping2csv.py -u https://open.spotify.com/playlist/7jpP2XQ1C52509yPvyYxhi -o mix.csv
+python csv2titles.py
+./titles2mp3batch.sh # chmod +x ./titles2mp3batch.sh for the first time
+```
+
+Thanks to [lixx21](https://github.com/lixx21/spotify-scrapping) for the `scraping.py` base (which unfortunately didn't have infinite scroll working) I added in a "zoom out" to capture more songs at once.
+
 ## Next Steps
 
 - Upload to ampache/plex through rsync?
